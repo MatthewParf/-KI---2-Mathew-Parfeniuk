@@ -1,4 +1,4 @@
-def find_values_exceeding_threshold(filename, check):
+def cheking_values(filename, check):
 
     with open(filename, 'r') as file:
         lines = file.readlines()
@@ -13,11 +13,11 @@ def find_values_exceeding_threshold(filename, check):
         if a == 0:
             print("Значення не знайдено. Перевірте, що ви ввели все вірно.")
             print("Введіть значення ААА(наприклад: 124)")
-
+        print(" ")
 while True:
     print("Введіть значення ААА(наприклад: 124)")
     check_value = input("Введіть значення AAA або (q) щоб вийти: ")
     if check_value == "q":
         print("Дякуюємо за використання, повертайтесь ще!")
         break
-    find_values_exceeding_threshold("Value.txt", check_value)
+    cheking_values("Value.txt", check_value)
