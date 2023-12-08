@@ -1,16 +1,23 @@
-# This is a sample Python script.
+def find_values_exceeding_threshold(filename, check):
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+        a = 0
+        for line in lines:
+            values = line.split()
+            if len(values) == 2:
+                time, value = values
+                if float(value) > float(check):
+                    print(f"Час: {time}, Значення: {value}")
+                    a =+ 1
+        if a == 0:
+            print("Значення не знайдено. Перевірте, що ви ввели все вірно.")
+            print("Введіть значення ААА(наприклад: 124)")
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+while True:
+    print("Введіть значення ААА(наприклад: 124)")
+    check_value = input("Введіть значення AAA або (q) щоб вийти: ")
+    if check_value == "q":
+        print("Дякуюємо за використання, повертайтесь ще!")
+        break
+    find_values_exceeding_threshold("Value.txt", check_value)
